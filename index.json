@@ -1,0 +1,44 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Parallel World Plugins",
+    "zh": "平行世界插件"
+  },
+  "description": {
+    "en": "DeepSeek Harness plugins published by ParallelWorldLabs.",
+    "zh": "ParallelWorldLabs 发布的 DeepSeek Harness 插件。"
+  },
+  "plugins": [
+    {
+      "name": "pw-plugins-odoo",
+      "title": {
+        "en": "PW Odoo for DeepSeek Harness",
+        "zh": "平行世界 Odoo · DSH 工作台"
+      },
+      "description": {
+        "en": "Read-only Odoo workbench for DeepSeek Harness (DSH). Browse CRM, sales, purchase and inventory in a right-side panel, switch companies, and ask the Agent to filter or open records.",
+        "zh": "DeepSeek Harness（DSH）里的 Odoo 只读工作台。在右侧查看 CRM、销售、采购和库存，切换公司，也可以让 Agent 筛选或打开记录。"
+      },
+      "icon": "icons/odoo.svg",
+      "author": "ParallelWorldLabs",
+      "homepage": "https://github.com/ParallelWorldLabs/PW-Plugins-Odoo#readme",
+      "repository": {
+        "url": "https://github.com/ParallelWorldLabs/PW-Plugins-Odoo"
+      },
+      "versions": [
+        {
+          "version": "0.5.2",
+          "publishTimestamp": 1794235257,
+          "engines": {
+            "dsh": "0.2.2-rc.1"
+          },
+          "source": {
+            "type": "git",
+            "url": "https://github.com/ParallelWorldLabs/PW-Plugins-Odoo",
+            "commit": "9e3d8512515947e89b263a5383e3cc381bd2b06a"
+          }
+        }
+      ]
+    }
+  ]
+}
