@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pw-plugins-odoo",
+  "version": "0.5.2",
+  "description": "Odoo CRM、销售、采购和库存只读工作台，支持 DeepSeek Harness 页面联动与 MCP"
+}

@@ -1,0 +1,147 @@
+{
+  "name": "pw-plugins-odoo",
+  "version": "0.5.2",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19",
+    "dsh": "0.2.2-rc.1"
+  },
+  "scripts": {
+    "build": "node scripts/generate-remotes.mjs && tsc -p tsconfig.json && node scripts/build.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "test:live": "npm run build && node --env-file=.env --test tests/live.integration.mjs",
+    "start": "node dist/mcp/stdio.js",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test:mto": "npm run build && node --env-file=.env tests/mto.acceptance.mjs",
+    "test:live:20": "npm run build && node --env-file=.env.odoo20 --test tests/live.integration.mjs",
+    "test:matrix": "npm run build && node scripts/test-matrix.mjs",
+    "test:mto:20": "npm run build && node --env-file=.env.odoo20 tests/mto.acceptance.mjs",
+    "test:frontend": "npm run build && node tests/frontend.acceptance.mjs",
+    "dev:dsh": "npm run build && node scripts/dev-dsh.mjs",
+    "test:settings": "npm run build && node tests/settings.acceptance.mjs",
+    "prepack": "npm run build 1>&2",
+    "release:site": "node scripts/release-site.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.1.0",
+    "@deepseek-ai/dsh": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-api-gateway": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-app-boot": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-atomic-write": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-locale": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-sidebar": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-sidebar-right": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-slots": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-workspace": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-credentials": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-plugin-market-index": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tools": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-typert-generator": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-typert-registry": "0.2.2-rc.1",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "esbuild": "0.28.2",
+    "node": "24.22.2",
+    "playwright": "^1.58.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "~5.9.3"
+  },
+  "files": [
+    "dist",
+    ".env.example",
+    "plugin.json",
+    "mcp.json",
+    "skills",
+    "README.md",
+    "docs",
+    "cordis.patch.yml",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts",
+    "LICENSE",
+    "icon.svg",
+    "locale/*.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/cordis/index.d.ts",
+      "default": "./dist/cordis/index.js"
+    },
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "default": "./dist/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-gateway",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0",
+    "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-typert-protocol": {
+      "optional": true
+    }
+  },
+  "description": "Read-only Odoo CRM, sales, purchase and inventory workbench for DeepSeek Harness and MCP.",
+  "author": "ParallelWorldLabs",
+  "license": "MIT",
+  "homepage": "https://github.com/ParallelWorldLabs/PW-Plugins-Odoo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParallelWorldLabs/PW-Plugins-Odoo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ParallelWorldLabs/PW-Plugins-Odoo/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "odoo",
+    "crm",
+    "sales",
+    "purchase",
+    "inventory",
+    "mcp"
+  ],
+  "icon": "./icon.svg",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

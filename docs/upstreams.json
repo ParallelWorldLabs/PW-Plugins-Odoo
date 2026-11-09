@@ -1,0 +1,104 @@
+{
+  "checkedAt": "2026-11-08",
+  "timezone": "Asia/Shanghai",
+  "source": "GitHub REST repository and commit endpoints; license fields require per-file verification",
+  "repositories": [
+    {
+      "repo": "odoo/odoo",
+      "branch": "20.0",
+      "sha": "41f91eb726dd354dbbf193e724fce4e4d9a34971",
+      "pushed_at": "2026-11-08T03:24:56Z",
+      "stars": 55629,
+      "license": "NOASSERTION",
+      "archived": false
+    },
+    {
+      "repo": "odoo/docker",
+      "branch": "master",
+      "sha": "f900094eb7492968332868d686caf22b966592ca",
+      "pushed_at": "2026-11-02T15:19:13Z",
+      "stars": 1222,
+      "license": "NOASSERTION",
+      "archived": false
+    },
+    {
+      "repo": "OCA/connector",
+      "branch": "19.0",
+      "sha": "cce76545ea56b85864fde9a1afb69748bc766e99",
+      "pushed_at": "2026-11-03T08:23:18Z",
+      "stars": 376,
+      "license": "AGPL-3.0",
+      "archived": false
+    },
+    {
+      "repo": "OCA/queue",
+      "branch": "19.0",
+      "sha": "6f275b28496d6311cab653e07baedb15ac89c676",
+      "pushed_at": "2026-11-06T14:48:48Z",
+      "stars": 273,
+      "license": "AGPL-3.0",
+      "archived": false
+    },
+    {
+      "repo": "OCA/rest-framework",
+      "branch": "19.0",
+      "sha": "310f0e88f0a9457dd65f09436038bc5b868cecef",
+      "pushed_at": "2026-11-04T13:47:15Z",
+      "stars": 387,
+      "license": "AGPL-3.0",
+      "archived": false
+    },
+    {
+      "repo": "Vauxoo/mcp.odoo",
+      "branch": "main",
+      "sha": "c6c1faf6f430a6bebada09fce5d6b976149ef9a2",
+      "pushed_at": "2026-10-08T06:36:20Z",
+      "stars": 3,
+      "license": "MIT",
+      "archived": false
+    },
+    {
+      "repo": "AlanOgic/odoo-mcp-19",
+      "branch": "master",
+      "sha": "aea8542de5bb549ca92e27681e7133d70163c6b9",
+      "pushed_at": "2026-11-02T13:37:06Z",
+      "stars": 11,
+      "license": "MIT",
+      "archived": false
+    },
+    {
+      "repo": "buiducnhat/odoo-mcp",
+      "branch": "main",
+      "sha": "323002c218f3ea7ec465fc6adad753b594ffd9dd",
+      "pushed_at": "2026-06-02T17:44:08Z",
+      "stars": 2,
+      "license": "MIT",
+      "archived": false
+    },
+    {
+      "repo": "ivnvxd/mcp-server-odoo",
+      "branch": "main",
+      "sha": "64b52df7ae3bb13cd6e07bebaf36913a1141ac48",
+      "pushed_at": "2026-11-01T09:26:25Z",
+      "stars": 413,
+      "license": "MPL-2.0",
+      "archived": false
+    },
+    {
+      "repo": "dengkun0/dsh-erp-bridge",
+      "branch": "main",
+      "sha": "365605a9fb1c43b4116e10c108eb08f716b56bfd",
+      "pushed_at": "2026-10-24T14:12:40Z",
+      "stars": 0,
+      "license": "MIT",
+      "archived": false
+    },
+    {
+      "repo": "deepseek-ai/deepseek-harness",
+      "branch": "master",
+      "sha": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159",
+      "version": "0.2.2-rc.1",
+      "node": ">=24.9.0"
+    }
+  ]
+}

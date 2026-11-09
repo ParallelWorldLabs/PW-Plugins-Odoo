@@ -1,0 +1,40 @@
+import type { Page } from '../panel/contracts.js';
+
+export interface NavigationHost {
+  mounted(): boolean;
+  subscribe(listener: () => void): () => void;
+  startSession(): void;
+  open(page: Page): void;
+}
+
+/** Coalesce left-menu clicks while retaining the host's existing drafts. */
+export class OdooNavigation {
+  private target: Page = 'crm';
+  private pending: Promise<void> | undefined;
+  private cleanup: (() => void) | undefined;
+  private reject: ((error: Error) => void) | undefined;
+  constructor(private readonly host: NavigationHost, private readonly timeoutMs = 10000) {}
+  activate(page: Page): Promise<void> {
+    this.target = page;
+    if (this.pending) return this.pending;
+    if (this.host.mounted()) { this.host.open(page); return Promise.resolve(); }
+    const pending = new Promise<void>((resolve, reject) => {
+      this.reject = reject;
+      let timer: ReturnType<typeof setTimeout>;
+      let unsubscribe = () => {};
+      this.cleanup = () => { clearTimeout(timer); unsubscribe(); this.cleanup = undefined; this.reject = undefined; };
+      const check = () => {
+        if (!this.host.mounted()) return;
+        this.cleanup?.();
+        try { this.host.open(this.target); resolve(); } catch (error) { reject(error); }
+      };
+      timer = setTimeout(() => { this.cleanup?.(); reject(new Error('未能挂载会话工作区，请先打开一个会话后重试。')); }, this.timeoutMs);
+      unsubscribe = this.host.subscribe(check);
+      try { this.host.startSession(); check(); } catch (error) { this.cleanup?.(); reject(error); }
+    });
+    this.pending = pending;
+    void pending.then(() => { if (this.pending === pending) this.pending = undefined; }, () => { if (this.pending === pending) this.pending = undefined; });
+    return pending;
+  }
+  cancel() { const reject = this.reject; this.cleanup?.(); reject?.(new Error('已取消打开 Odoo 面板。')); this.pending = undefined; }
+}

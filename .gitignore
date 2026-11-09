@@ -1,0 +1,14 @@
+artifacts/
+lib/
+.local/
+
+# Standalone public checkout
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.log
+.DS_Store
+*.dump
