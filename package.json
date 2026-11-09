@@ -1,0 +1,103 @@
+{
+  "name": "pw-plugins-odoo",
+  "version": "0.5.2",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19",
+    "dsh": "0.2.2-rc.1"
+  },
+  "scripts": {
+    "start": "node dist/mcp/stdio.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "files": [
+    "dist",
+    ".env.example",
+    "plugin.json",
+    "mcp.json",
+    "skills",
+    "README.md",
+    "docs",
+    "cordis.patch.yml",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts",
+    "LICENSE",
+    "icon.svg",
+    "locale/*.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/cordis/index.d.ts",
+      "default": "./dist/cordis/index.js"
+    },
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "default": "./dist/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-gateway",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0",
+    "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-typert-protocol": {
+      "optional": true
+    }
+  },
+  "description": "Read-only Odoo workbench for DeepSeek Harness (DSH). Browse CRM, sales, purchase and inventory in a right-side panel, switch companies, and ask the Agent to filter or open records.",
+  "author": "ParallelWorldLabs",
+  "license": "MIT",
+  "homepage": "https://github.com/ParallelWorldLabs/PW-Plugins-Odoo#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParallelWorldLabs/PW-Plugins-Odoo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ParallelWorldLabs/PW-Plugins-Odoo/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "odoo",
+    "crm",
+    "sales",
+    "purchase",
+    "inventory",
+    "mcp"
+  ],
+  "icon": "./icon.svg"
+}

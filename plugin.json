@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pw-plugins-odoo",
+  "version": "0.5.2",
+  "description": "DeepSeek Harness（DSH）里的 Odoo 只读工作台。在右侧查看 CRM、销售、采购和库存，切换公司，也可以让 Agent 筛选或打开记录。"
+}
