@@ -1,8 +1,12 @@
-# PW-Plugins-Odoo
+# PW-Plugins-Odoo · DeepSeek Harness 工作台
 
-平行世界 Odoo 插件，目标为 **Odoo 19 / 20 社区版**，DeepSeek Harness 按官方最新源码 `fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159`（`0.2.2-rc.1`）适配。
+**在 DeepSeek Harness（DSH）里，一边和 Agent 对话，一边在右侧查看 Odoo。** 从左侧 Odoo 菜单打开工作台，中央保留对话，右侧可切换 CRM、销售、采购、库存、记录和设置。销售与采购各有独立列表、筛选和详情。
 
-当前为 **0.5.2 发布候选：真实 DSH 只读工作台 + Agent 页面联动 + 独立 MCP**。左侧浮层、中央对话、右侧单标签的列表优先布局已实现；**CRM、销售、采购、库存、记录、设置**为六个独立分页，销售与采购分别保留筛选和详情。已接入本机 Odoo 19/20，在官方 DSH Web profile 验证真实 Session/Agent 工具执行与页面回执。仍不开放业务写入，Electron 桌面壳及更多部署形态待专项验收。
+- **直接在界面管理连接。** 在“设置”中添加和测试 Odoo 连接，自动识别 API Key 对应的公司。顶部可切换连接，选择全部授权公司或单家公司。
+- **让 Agent 和界面配合。** 可以请 Agent 查看当前选中的商机、筛选销售订单或打开记录详情，操作结果会显示在右侧工作台。
+- **从销售单追溯关联采购。** 查看实际采购来源和 MTO 相关链路，并打开对应的采购详情。
+
+0.5.2 发布候选支持 Odoo 19/20 社区版，DSH 兼容声明为 0.2.2-rc.1。工作台提供只读查询，验收使用 DSH Web profile。详见 [工作台使用说明](docs/FRONTEND.md)。
 
 ## 已实现
 
@@ -54,7 +58,7 @@ node --env-file=.env dist/mcp/stdio.js
 
 stdio 启动后等待 MCP 消息，没有普通交互提示；stdout 只用于协议。
 
-## Agent Plugins / MCP
+## 其他 Agent 的 MCP 接入
 
 根 `plugin.json`、`mcp.json` 和 `skills/odoo-operations/SKILL.md` 按 Agent Plugins 1.0.0 布局组织。客户端需要支持标准配置并向子进程安全注入上述环境变量。`${PLUGIN_ROOT}` 仅用于脚本路径，不假定标准支持展开任意凭据变量。
 

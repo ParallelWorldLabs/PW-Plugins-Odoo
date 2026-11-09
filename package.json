@@ -118,7 +118,7 @@
       "optional": true
     }
   },
-  "description": "Read-only Odoo CRM, sales, purchase and inventory workbench for DeepSeek Harness and MCP.",
+  "description": "Read-only Odoo workbench for DeepSeek Harness (DSH). Browse CRM, sales, purchase and inventory in a right-side panel, switch companies, and ask the Agent to filter or open records.",
   "author": "ParallelWorldLabs",
   "license": "MIT",
   "homepage": "https://github.com/ParallelWorldLabs/PW-Plugins-Odoo#readme",

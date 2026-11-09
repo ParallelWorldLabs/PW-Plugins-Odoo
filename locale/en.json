@@ -1,1 +1,6 @@
-{"meta":{"title":"PW Odoo","description":"Read-only Odoo CRM, sales, purchase and inventory workbench with company selection and Agent panel tools."}}
+{
+  "meta": {
+    "title": "PW Odoo for DeepSeek Harness",
+    "description": "Read-only Odoo workbench for DeepSeek Harness (DSH). Browse CRM, sales, purchase and inventory in a right-side panel, switch companies, and ask the Agent to filter or open records."
+  }
+}
