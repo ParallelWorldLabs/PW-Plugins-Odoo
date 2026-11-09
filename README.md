@@ -6,7 +6,17 @@
 - **让 Agent 和界面配合。** 可以请 Agent 查看当前选中的商机、筛选销售订单或打开记录详情，操作结果会显示在右侧工作台。
 - **从销售单追溯关联采购。** 查看实际采购来源和 MTO 相关链路，并打开对应的采购详情。
 
-0.5.2 发布候选支持 Odoo 19/20 社区版，DSH 兼容声明为 0.2.2-rc.1。工作台提供只读查询，验收使用 DSH Web profile。详见 [工作台使用说明](docs/FRONTEND.md)。
+0.5.2 支持 Odoo 19/20 社区版，DSH 兼容声明为 0.2.2-rc.1。工作台提供只读查询，验收使用 DSH Web profile。详见 [工作台使用说明](docs/FRONTEND.md)。
+
+
+## 在 DeepSeek Harness 安装
+
+1. 打开“插件 → 实验性插件”，启用“自定义插件索引”。
+2. 打开“发现 → 添加索引源”，填写 [平行世界插件索引](https://parallelworldlabs.github.io/PW-Plugins-Odoo/index.json) 的地址。
+3. 找到“平行世界 Odoo · DSH 工作台”，安装 0.5.2。安装确认框会显示 GitHub 仓库和固定提交。
+4. 安装后打开“Odoo → 设置”，添加并验证连接。
+
+索引从 GitHub 分发已构建的安装文件。已在独立 DSH 0.2.2-rc.1 profile 验证索引读取、Git 安装和首次打开设置页。
 
 ## 已实现
 
@@ -104,4 +114,4 @@ npm pack --ignore-scripts
 
 ## 公开发行
 
-许可证为 MIT，版权署名 ParallelWorldLabs。公开源代码仓库为 https://github.com/ParallelWorldLabs/PW-Plugins-Odoo 。0.5.2 沿用已验收的 0.5.1 业务行为，补齐公开发行元数据、图标和许可。npm 和索引上线状态以实际发布结果为准，详见 [发布说明](docs/PUBLISHING.md)。Codex、Hermes 的本地接入步骤见 [MCP 配置](docs/MCP.md)。
+许可证为 MIT，版权署名 ParallelWorldLabs。公开源代码仓库为 https://github.com/ParallelWorldLabs/PW-Plugins-Odoo 。0.5.2 沿用已验收的 0.5.1 业务行为，补齐公开发行元数据、图标和许可。DSH 插件索引已上线，当前安装源为 GitHub。维护流程见 [发布说明](docs/PUBLISHING.md)。Codex、Hermes 的本地接入步骤见 [MCP 配置](docs/MCP.md)。

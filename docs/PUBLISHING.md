@@ -1,8 +1,15 @@
 # 发布 PW-Plugins-Odoo
 
-0.5.2 是首个公开发行候选版本，采用 MIT 许可，版权署名 ParallelWorldLabs。公开源码仓库为 [ParallelWorldLabs/PW-Plugins-Odoo](https://github.com/ParallelWorldLabs/PW-Plugins-Odoo)。插件目录作为独立仓库根目录发布。
+0.5.2 是首个公开发行版本，采用 MIT 许可，版权署名 ParallelWorldLabs。公开源码仓库为 [ParallelWorldLabs/PW-Plugins-Odoo](https://github.com/ParallelWorldLabs/PW-Plugins-Odoo)。插件目录作为独立仓库根目录发布。
 
 公开包名为 `pw-plugins-odoo`，DSH 兼容声明为已验收的 `0.2.2-rc.1`。发行包包含预构建 Host、Client、MCP 和 Typert 契约。连接、API Key 与测试数据均由用户在本地配置。
+
+
+## 当前安装来源
+
+[DSH 插件索引](https://parallelworldlabs.github.io/PW-Plugins-Odoo/index.json) 已上线。0.5.2 指向 GitHub 上的[固定构建提交](https://github.com/ParallelWorldLabs/PW-Plugins-Odoo/commit/9e3d8512515947e89b263a5383e3cc381bd2b06a)，包含已验收归档中的 Host、Client、MCP 和 Typert 文件。Git 发行清单保留启动入口，省去安装时的构建命令。
+
+安装端使用 DSH 发现页的确认框，索引和安装源走 GitHub。已用独立 profile 验证读取、安装及首次打开设置页。后续也可以按下面的步骤将公开包发布到 npm。
 
 ## 构建并检查发行包
 
@@ -29,7 +36,7 @@ npm publish ./artifacts/pw-plugins-odoo-0.5.2.tgz --access public --registry=htt
 
 验证仓库返回的版本与验收归档一致。npm 账号和令牌只在本机配置。公开发布需要包写权限，并受 npm 双重验证策略约束。见 [npm 发布要求](https://docs.npmjs.com/requiring-2fa-for-package-publishing-and-settings-modification/)。
 
-## 上线插件索引
+## 为 npm 版本更新插件索引
 
 npm 公开版本可下载后运行：
 
